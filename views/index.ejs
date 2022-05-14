@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%= title %>
+    </title>
+    <!-- <link  type="text/css" href="/assets/css/home.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url("https://webartdevelopers.com/blog/wp-content/uploads/2019/02/Pure-CSS3-Gradient-Background-Animation.gif");
+            background-repeat: no-repeat;
+            background-size: 200vh 100vh;
+        }
+        ul{
+            list-style:none;
+        }
+        p{
+            margin: 0;
+            /* width: 30%; */
+            text-align: center;
+            padding: 5px;
+            box-shadow: 10px 5px 5px bisque;
+            background-image: url("https://d11a6trkgmumsb.cloudfront.net/original/3X/e/c/ecfbdc40a262cfcf8862fefc5935d276f3fb3280.gif");
+        }
+        .main-div{
+            border: 2px solid bisque;
+            width: 50%;
+            display: flex
+        }
+        .list{
+            flex: 1;
+        }
+        .form-div{
+            margin-top: 6vh;
+            flex: 1;
+        }
+        form{
+            display: grid;
+            width: auto;
+            margin-left: 30px;
+        }
+        input{
+            margin-bottom: 10px;
+            border: transparent;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        button{
+            width: 50%;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <h1  class="text-white my-5"> <i class="fa-solid fa-address-card"></i> Contact List </h1>
+    <div class="container main-div my-5">
+    
+
+    <div class="list">
+        <ul>
+            <% for(let i of contact_list){%>
+            <li class="my-3">
+                <p class="text-white"> <i class="fa-solid fa-address-book"></i> <%= i.name %></p>
+                <p class="text-white"> <i class="fa-solid fa-phone"></i> <%= i.phone %></p>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+    <div class="form-div">
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+            <input type="number" name="phone" placeholder="Enter Your Phone-Number" required>
+            <button class="btn btn-success" type="submit">Add ContactList</button>
+        </form>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/4eb1801679.js" crossorigin="anonymous"></script>
+    <script  src="/assets/js/home.js"></script>
+    
+
+</body>
+</html>
