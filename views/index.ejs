@@ -20,7 +20,7 @@
         }
         p{
             margin: 0;
-            /* width: 30%; */
+            width: 50%;
             text-align: center;
             padding: 5px;
             box-shadow: 10px 5px 5px bisque;
@@ -55,6 +55,9 @@
         h1{
             text-align: center;
         }
+        .contact-L{
+            display: flex;
+        }
     </style>
 </head>
 <body>
@@ -65,9 +68,13 @@
     <div class="list">
         <ul>
             <% for(let i of contact_list){%>
-            <li class="my-3">
+            <li class="my-3 contact-L">
                 <p class="text-white"> <i class="fa-solid fa-address-book"></i> <%= i.name %></p>
-                <p class="text-white"> <i class="fa-solid fa-phone"></i> <%= i.phone %></p>
+                <p class="text-white"> <i class="fa-solid fa-phone"></i> <%= i.phone %>
+                    <a class="text-white" href="/delete-contact/?phone=<%= i.phone %>"><i class="fa-solid fa-trash-arrow-up"></i></a>
+                </p>
+                
+         
             </li>
             <%}%>
         </ul>
